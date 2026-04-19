@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sejal Shankar Desai — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <span class="toggle-icon sun">☀️</span>
+    <span class="toggle-icon moon">🌙</span>
+  </button>
+
+  <nav class="nav" id="nav">
+    <div class="nav-logo">SSD</div>
+    <ul class="nav-links">
+      <li><a href="#hero"       class="nav-link active">Home</a></li>
+      <li><a href="#about"      class="nav-link">About</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#skills"     class="nav-link">Skills</a></li>
+      <li><a href="#projects"   class="nav-link">Projects</a></li>
+      <li><a href="#contact"    class="nav-link">Contact</a></li>
+    </ul>
+    <button class="nav-menu" id="navMenu">☰</button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#hero"       class="mobile-link">Home</a>
+    <a href="#about"      class="mobile-link">About</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#skills"     class="mobile-link">Skills</a>
+    <a href="#projects"   class="mobile-link">Projects</a>
+    <a href="#contact"    class="mobile-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- ── HERO ── -->
+    <section class="section hero-section" id="hero">
+      <div class="hero-content">
+        <div class="hero-badge">🤖 Open to new opportunities</div>
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Sejal Shankar Desai</span>
+        </h1>
+        <p class="hero-subtitle">Automation & Programming Specialist · Full-Stack Developer</p>
+        <p class="hero-desc">
+          Results-driven specialist with experience in laboratory robotics, full-stack web development,
+          and process optimization. I build Python automation tools, Hamilton liquid-handling workflows,
+          and scalable React applications that drive real efficiency gains.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact"  class="btn btn-secondary">Get In Touch</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number" data-target="3">0</span>+
+            <span class="stat-label">Years Exp</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="3">0</span>
+            <span class="stat-label">Companies</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="20">0</span>+
+            <span class="stat-label">Technologies</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <canvas id="character-canvas"></canvas>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section class="section" id="about">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">My <span class="gradient-text">Story</span></h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-card reveal">
+            <div class="about-icon">🎓</div>
+            <h3>Education</h3>
+            <p>MS in Information Systems from <strong>Northeastern University, Boston</strong> (2022–2024), built on a BE in Electronics from <strong>University of Mumbai</strong> (2018–2022).</p>
+          </div>
+          <div class="about-card reveal">
+            <div class="about-icon">🤖</div>
+            <h3>Lab Automation</h3>
+            <p>Currently at Eurofins (serving Zoetis), I engineer Hamilton VENUS protocols, Python extraction tools, and Andrew+ optimization workflows in regulated lab environments.</p>
+          </div>
+          <div class="about-card reveal">
+            <div class="about-icon">💻</div>
+            <h3>Web Development</h3>
+            <p>Architected a full-stack lab inventory system at Zoetis using React 18 and .NET Core 8 with JWT auth, reducing inventory lookup time by 70%.</p>
+          </div>
+          <div class="about-card reveal">
+            <div class="about-icon">📐</div>
+            <h3>Methodology</h3>
+            <p>Adept at Agile/Scrum, Lean Six Sigma, and cross-functional collaboration with scientists, QA, and lab operations to align solutions with compliance standards.</p>
+          </div>
+        </div>
+
+        <!-- Certifications row -->
+        <div class="certs-row reveal">
+          <h3 class="certs-title">Certifications</h3>
+          <div class="certs-list">
+            <div class="cert-badge">
+              <span class="cert-icon">🏆</span>
+              <div>
+                <div class="cert-name">Hamilton VENUS Software Training</div>
+                <div class="cert-issuer">Hamilton Company</div>
+              </div>
+            </div>
+            <div class="cert-badge">
+              <span class="cert-icon">🏆</span>
+              <div>
+                <div class="cert-name">Bionex Green Button Go Software Training</div>
+                <div class="cert-issuer">Bionex Instruments</div>
+              </div>
+            </div>
+            <div class="cert-badge">
+              <span class="cert-icon">🏆</span>
+              <div>
+                <div class="cert-name">Six Sigma Yellow Belt</div>
+                <div class="cert-issuer">Lean Six Sigma Institute</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXPERIENCE ── -->
+    <section class="section" id="experience">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">Experience</span>
+          <h2 class="section-title">Work <span class="gradient-text">History</span></h2>
+        </div>
+        <div class="timeline">
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Automation & Programming Specialist</h3>
+                  <div class="timeline-company">Eurofins · Providing Service to Zoetis</div>
+                  <div class="timeline-location">📍 Kalamazoo, MI</div>
+                </div>
+                <span class="timeline-date">Nov 2024 – Present</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Spearheaded a cell line development project on Hamilton 2 using Twister channels to automate cap removal/re-capping of 50 mL conical tubes, enabling repeatable high-throughput sample workflows.</li>
+                <li>Engineered a Python-based Hamilton method file extraction tool integrated with an AI model to parse, analyze, and document instrument code logic, reducing method review time and accelerating onboarding.</li>
+                <li>Optimized Andrew+ pipetting robot runtime by <strong>75%</strong> (60 min → 15 min) through method redesign, deck layout optimization, and parallelization of liquid-handling operations.</li>
+                <li>Developed Excel-driven input templates for glycan assays on Andrew+, streamlining parameter entry and reducing manual errors.</li>
+                <li>Enhanced existing lab automation apps using VB.NET, improving functionality and stability across production workflows.</li>
+                <li>Designed and validated Hamilton VENUS protocols for the parasitology group, including a flea method requiring precise 2 µL dispense accuracy.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag">Python</span><span class="tag">Hamilton VENUS</span><span class="tag">Andrew+</span>
+                <span class="tag">VB.NET</span><span class="tag">Lab Automation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Web Developer Intern</h3>
+                  <div class="timeline-company">Zoetis</div>
+                  <div class="timeline-location">📍 Kalamazoo, MI</div>
+                </div>
+                <span class="timeline-date">June 2024 – Nov 2024</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Architected and delivered a full-stack lab inventory management system using React 18 and .NET Core 8, centralizing consumable tracking across multiple lab locations and reducing lookup time by <strong>70%</strong>.</li>
+                <li>Implemented JWT-based authentication and role-based access control (Admin/User) with RESTful API endpoints supporting full CRUD operations.</li>
+                <li>Engineered a responsive UI using Styled Components and React Hooks with dark/light mode, real-time auto-refresh, and mobile-first design.</li>
+                <li>Built custom middleware for request validation, exception tracking, and graceful degradation, achieving <strong>99.5% uptime</strong>.</li>
+                <li>Wrote optimized SQL Server queries via Entity Framework Core with indexed columns to improve data retrieval speed.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag">React 18</span><span class="tag">.NET Core 8</span><span class="tag">JWT</span>
+                <span class="tag">SQL Server</span><span class="tag">REST API</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Front-End Web Developer</h3>
+                  <div class="timeline-company">TCR Innovation</div>
+                  <div class="timeline-location">📍 Mumbai, India</div>
+                </div>
+                <span class="timeline-date">Sept 2021 – Feb 2022</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Partnered with UX/UI designers, back-end developers, and stakeholders to deliver responsive, user-centric web applications aligned with business objectives.</li>
+                <li>Built and maintained client-side applications using HTML5, CSS3, JavaScript, and jQuery, ensuring cross-browser compatibility and optimized page performance.</li>
+                <li>Applied component reusability and performance optimization techniques, resulting in measurable improvements in user engagement.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
+                <span class="tag">jQuery</span><span class="tag">UI/UX</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ── -->
+    <section class="section" id="skills">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">Skills</span>
+          <h2 class="section-title">My <span class="gradient-text">Toolkit</span></h2>
+        </div>
+        <div class="skills-categories">
+          <div class="skill-category reveal">
+            <h3 class="category-title">Languages</h3>
+            <div class="skill-chips">
+              <span class="chip">Python</span>
+              <span class="chip">Java</span>
+              <span class="chip">C / C++</span>
+              <span class="chip">Swift</span>
+              <span class="chip">VB.NET</span>
+            </div>
+          </div>
+          <div class="skill-category reveal">
+            <h3 class="category-title">Web Development</h3>
+            <div class="skill-chips">
+              <span class="chip">HTML5</span>
+              <span class="chip">CSS3 / SCSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">ReactJS</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">ExpressJS</span>
+              <span class="chip">Bootstrap</span>
+              <span class="chip">Tailwind CSS</span>
+              <span class="chip">OpenAPI</span>
+            </div>
+          </div>
+          <div class="skill-category reveal">
+            <h3 class="category-title">Databases</h3>
+            <div class="skill-chips">
+              <span class="chip">MySQL</span>
+              <span class="chip">SQL Server</span>
+              <span class="chip">MongoDB</span>
+              <span class="chip">Core Data</span>
+            </div>
+          </div>
+          <div class="skill-category reveal">
+            <h3 class="category-title">Lab Automation</h3>
+            <div class="skill-chips">
+              <span class="chip">Hamilton VENUS</span>
+              <span class="chip">Andrew+</span>
+              <span class="chip">Agilent Bravo</span>
+              <span class="chip">Hive Robot</span>
+              <span class="chip">Tempest</span>
+              <span class="chip">Fanuc Arm</span>
+              <span class="chip">Green Button Go</span>
+              <span class="chip">One Lab Waters</span>
+            </div>
+          </div>
+          <div class="skill-category reveal">
+            <h3 class="category-title">Design Tools</h3>
+            <div class="skill-chips">
+              <span class="chip">Figma</span>
+              <span class="chip">Adobe XD</span>
+              <span class="chip">Sketch</span>
+              <span class="chip">Balsamiq</span>
+              <span class="chip">Axure</span>
+              <span class="chip">Moqup</span>
+            </div>
+          </div>
+          <div class="skill-category reveal">
+            <h3 class="category-title">Project Tools</h3>
+            <div class="skill-chips">
+              <span class="chip">Jira</span>
+              <span class="chip">Git</span>
+              <span class="chip">Agile / Scrum</span>
+              <span class="chip">Lean Six Sigma</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-bars reveal">
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Web Development (React, Node, .NET)</span><span>90%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Python & Automation Scripting</span><span>88%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Lab Robotics (Hamilton, Andrew+)</span><span>85%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>UI/UX Design (Figma, Adobe XD)</span><span>80%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Databases (SQL Server, MySQL, MongoDB)</span><span>78%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section class="section" id="projects">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">Projects</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Work</span></h2>
+        </div>
+        <div class="projects-grid">
+
+          <div class="project-card reveal">
+            <div class="project-glow"></div>
+            <div class="project-header">
+              <span class="project-emoji">🧪</span>
+              <div class="project-links">
+                <a href="https://github.com/SejalSDesai" class="project-link" title="GitHub" target="_blank" rel="noopener">⬡</a>
+              </div>
+            </div>
+            <h3 class="project-title">Lab Inventory Management System</h3>
+            <p class="project-desc">Full-stack system built at Zoetis centralizing consumable tracking across multiple lab locations. Features JWT auth, role-based access (Admin/User), real-time auto-refresh, and an admin dashboard — reducing inventory lookup time by 70%.</p>
+            <div class="project-tags">
+              <span class="tag">React 18</span><span class="tag">.NET Core 8</span>
+              <span class="tag">SQL Server</span><span class="tag">JWT</span><span class="tag">REST API</span>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-glow"></div>
+            <div class="project-header">
+              <span class="project-emoji">🤖</span>
+              <div class="project-links">
+                <a href="https://github.com/SejalSDesai" class="project-link" title="GitHub" target="_blank" rel="noopener">⬡</a>
+              </div>
+            </div>
+            <h3 class="project-title">Hamilton Method File Extraction Tool</h3>
+            <p class="project-desc">Python tool integrated with an AI model to parse, analyze, and auto-document Hamilton VENUS instrument method files. Dramatically reduced method review time and accelerated new-hire onboarding in a regulated lab environment.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span><span class="tag">AI / LLM</span>
+              <span class="tag">Hamilton VENUS</span><span class="tag">Automation</span>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-glow"></div>
+            <div class="project-header">
+              <span class="project-emoji">⚗️</span>
+              <div class="project-links">
+                <a href="https://github.com/SejalSDesai" class="project-link" title="GitHub" target="_blank" rel="noopener">⬡</a>
+              </div>
+            </div>
+            <h3 class="project-title">Andrew+ Pipetting Robot Optimization</h3>
+            <p class="project-desc">Redesigned Andrew+ liquid-handling workflows through deck layout optimization and operation parallelization, cutting experiment runtime by 75% (60 min → 15 min) and boosting throughput and reproducibility.</p>
+            <div class="project-tags">
+              <span class="tag">Andrew+</span><span class="tag">Lab Automation</span>
+              <span class="tag">Process Optimization</span><span class="tag">Lean Six Sigma</span>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-glow"></div>
+            <div class="project-header">
+              <span class="project-emoji">🧬</span>
+              <div class="project-links">
+                <a href="https://github.com/SejalSDesai" class="project-link" title="GitHub" target="_blank" rel="noopener">⬡</a>
+              </div>
+            </div>
+            <h3 class="project-title">Cell Line Development Automation</h3>
+            <p class="project-desc">Engineered a Hamilton 2 workflow using Twister channels to automate cap removal and re-capping of 50 mL conical tubes, enabling consistent, repeatable high-throughput sample preparation for cell line development.</p>
+            <div class="project-tags">
+              <span class="tag">Hamilton 2</span><span class="tag">VENUS</span>
+              <span class="tag">High-Throughput</span><span class="tag">Biotech</span>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-glow"></div>
+            <div class="project-header">
+              <span class="project-emoji">📊</span>
+              <div class="project-links">
+                <a href="https://github.com/SejalSDesai" class="project-link" title="GitHub" target="_blank" rel="noopener">⬡</a>
+              </div>
+            </div>
+            <h3 class="project-title">Glycan Assay Input Templates</h3>
+            <p class="project-desc">Developed Excel-driven input templates for the glycan assay on Andrew+, streamlining parameter entry, volume mapping, and plate configuration. Reduced setup time and minimized manual entry errors across lab operations.</p>
+            <div class="project-tags">
+              <span class="tag">Excel</span><span class="tag">Andrew+</span>
+              <span class="tag">Lab Workflow</span><span class="tag">VB.NET</span>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-glow"></div>
+            <div class="project-header">
+              <span class="project-emoji">🌐</span>
+              <div class="project-links">
+                <a href="https://github.com/SejalSDesai" class="project-link" title="GitHub" target="_blank" rel="noopener">⬡</a>
+              </div>
+            </div>
+            <h3 class="project-title">Client Web Applications — TCR Innovation</h3>
+            <p class="project-desc">Built and maintained multiple responsive, user-centric client-side applications at TCR Innovation, ensuring cross-browser compatibility, accessibility, and measurable improvements in user engagement and performance.</p>
+            <div class="project-tags">
+              <span class="tag">HTML5</span><span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span><span class="tag">jQuery</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section class="section" id="contact">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">Contact</span>
+          <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+          <p class="section-subtitle">I'm always open to discussing new opportunities, automation challenges, or web development projects.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="contact-item">
+              <div class="contact-icon">📧</div>
+              <div>
+                <div class="contact-label">Email</div>
+                <a href="mailto:sejalsdesai30@gmail.com" class="contact-value">sejalsdesai30@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">💼</div>
+              <div>
+                <div class="contact-label">LinkedIn</div>
+                <a href="https://linkedin.com/in/sejalsdesai" class="contact-value" target="_blank" rel="noopener">linkedin.com/in/sejalsdesai</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🐙</div>
+              <div>
+                <div class="contact-label">GitHub</div>
+                <a href="https://github.com/SejalSDesai" class="contact-value" target="_blank" rel="noopener">github.com/SejalSDesai</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <div class="contact-label">Location</div>
+                <span class="contact-value">Kalamazoo, MI</span>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" placeholder="What's this about?" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send Message ✉️</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Designed & Built by <span class="gradient-text">Sejal Shankar Desai</span> · 2025</p>
+    <p class="footer-sub">Automation Specialist · Full-Stack Developer · Kalamazoo, MI</p>
+  </footer>
+
+  <div class="toast" id="toast">Message sent! I'll get back to you soon 🎉</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
