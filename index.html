@@ -16,17 +16,7 @@
   <!-- Background Canvas -->
   <canvas id="bg-canvas"></canvas>
 
-  <!-- Top Controls -->
-  <div class="top-controls">
-    <button class="ctrl-btn" id="voiceBtn" title="Hear intro">🔊</button>
-    <button class="ctrl-btn" id="reduceMotionBtn" title="Toggle animations">⚙</button>
-    <button class="ctrl-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <span class="toggle-icon sun">☀️</span>
-      <span class="toggle-icon moon">🌙</span>
-    </button>
-  </div>
-
-  <!-- Navigation -->
+  <!-- Navigation (controls live inside nav to prevent overlap with links) -->
   <nav class="nav" id="nav">
     <div class="nav-logo">SSD</div>
     <ul class="nav-links">
@@ -38,6 +28,14 @@
       <li><button class="nav-link" data-page="page-resume">Resume</button></li>
       <li><button class="nav-link" data-page="page-contact">Contact</button></li>
     </ul>
+    <div class="top-controls">
+      <button class="ctrl-btn" id="voiceBtn" title="Hear intro">🔊</button>
+      <button class="ctrl-btn" id="reduceMotionBtn" title="Toggle animations">⚙</button>
+      <button class="ctrl-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="toggle-icon sun">☀️</span>
+        <span class="toggle-icon moon">🌙</span>
+      </button>
+    </div>
     <button class="nav-menu" id="navMenu">☰</button>
   </nav>
 
@@ -92,42 +90,47 @@
           </div>
         </div>
         <div class="hero-visual">
-          <!-- ── Avatar ──────────────────────────────────────────────
-               To swap your photo: replace images/hero-avatar.png
-               with your own image file (same filename or update src).
+
+          <!-- ── Floating avatar card ────────────────────────────────
+               Float animation lives on the outer wrapper so the JS
+               tilt on .avatar-card doesn't fight the CSS animation.
+               To swap photo: replace images/hero-avatar.png
           ──────────────────────────────────────────────────────── -->
-          <div class="avatar-wrapper">
-            <div class="avatar-glow-ring"></div>
-            <div class="avatar-glow-ring avatar-glow-ring-2"></div>
-            <img
-              src="images/hero-avatar.png"
-              alt="Sejal Shankar Desai — Automation Engineer"
-              class="hero-avatar-img"
-            />
+          <div class="avatar-float-wrapper">
+            <div class="avatar-card" id="avatarCard">
+              <img
+                src="images/hero-avatar.png"
+                alt="Sejal Shankar Desai — Automation Engineer"
+                class="avatar-photo"
+              />
+              <div class="avatar-shine"></div>
+            </div>
           </div>
 
           <!-- ── Skill tags ── -->
           <div class="hero-skill-tags">
-            <span class="skill-tag">🤖 Automation Engineering</span>
-            <span class="skill-tag">🧪 Lab Automation</span>
-            <span class="skill-tag">&lt;/&gt; App Building</span>
+            <span class="skill-tag"><span class="tag-dot tag-gold"></span>Automation Engineering</span>
+            <span class="skill-tag"><span class="tag-dot tag-blue"></span>Lab Automation</span>
+            <span class="skill-tag"><span class="tag-dot tag-purple"></span>App Building</span>
           </div>
 
-          <!-- ── Play intro button ──────────────────────────────────
-               Voice note uses browser speech synthesis (no file needed).
-               To use a real audio file: swap the speakGreeting() call
-               in app.js for an Audio('audio/sejal-intro.mp3').play().
+          <!-- ── Circular play / pause ───────────────────────────────
+               Uses browser speech synthesis — no audio file needed.
+               To use a real MP3: replace speakGreeting() in app.js
+               with new Audio('audio/sejal-intro.mp3').play()
           ──────────────────────────────────────────────────────── -->
-          <button class="voice-replay-btn" id="voiceReplayBtn">
-            <span class="voice-play-icon">▶</span>
-            <span class="voice-label">Play Intro</span>
-            <span class="voice-waves">
+          <div class="voice-pod" id="voicePod">
+            <button class="voice-circle-btn" id="voiceReplayBtn" aria-label="Play voice intro">
+              <svg class="v-icon v-play" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+              <svg class="v-icon v-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="4" width="4" height="16" rx="1"/><rect x="15" y="4" width="4" height="16" rx="1"/></svg>
+            </button>
+            <div class="voice-waveform">
               <span></span><span></span><span></span><span></span><span></span>
-            </span>
-          </button>
-          <p class="voice-fallback" id="voiceFallback">
-            🎧 Click play to hear my voice
-          </p>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <span class="voice-pod-label" id="voiceFallback">Play Intro</span>
+          </div>
+
         </div>
       </section>
     </div>

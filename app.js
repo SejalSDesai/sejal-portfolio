@@ -202,34 +202,49 @@ function animateBg() {
 animateBg();
 
 /* ════════════════════════════════════════
-   VOICE GREETING
+   VOICE GREETING  (play / pause toggle)
    ════════════════════════════════════════ */
 function speakGreeting() {
   const fallback = document.getElementById('voiceFallback');
+  const btn      = document.getElementById('voiceReplayBtn');
+  const pod      = document.getElementById('voicePod');
+
   if (!window.speechSynthesis) {
-    if (fallback) fallback.textContent = '🎧 Voice not supported in this browser.';
+    if (fallback) fallback.textContent = 'Voice not supported in this browser.';
     return;
   }
+
+  // If already speaking → act as pause/stop
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    btn?.classList.remove('speaking');
+    pod?.classList.remove('speaking');
+    if (fallback) fallback.textContent = 'Play Intro';
+    return;
+  }
+
   speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(
     "Hey, this is Sejal. I work as an Automation Engineer, and I also like building apps. Welcome to my portfolio."
   );
   u.rate = 0.88; u.pitch = 1.1; u.volume = 0.85;
-  const btn = document.getElementById('voiceReplayBtn');
+
   const trySpeak = () => {
     const vs   = speechSynthesis.getVoices();
     const pick = vs.find(v => v.lang.startsWith('en') && ['Samantha','Victoria','Karen','Moira','Zira'].some(n => v.name.includes(n)))
-               || vs.find(v => v.lang === 'en-US')
-               || vs[0];
+               || vs.find(v => v.lang === 'en-US') || vs[0];
     if (pick) u.voice = pick;
-    if (btn) btn.classList.add('speaking');
-    if (fallback) fallback.textContent = '🔊 Playing…';
-    u.onend = () => {
-      if (btn) btn.classList.remove('speaking');
-      if (fallback) fallback.textContent = '🎧 Click play to hear my voice';
+    btn?.classList.add('speaking');
+    pod?.classList.add('speaking');
+    if (fallback) fallback.textContent = 'Playing…';
+    u.onend = u.onerror = () => {
+      btn?.classList.remove('speaking');
+      pod?.classList.remove('speaking');
+      if (fallback) fallback.textContent = 'Play Intro';
     };
     speechSynthesis.speak(u);
   };
+
   if (speechSynthesis.getVoices().length) trySpeak();
   else speechSynthesis.onvoiceschanged = trySpeak;
 }
@@ -237,6 +252,25 @@ function speakGreeting() {
 window.addEventListener('load', () => setTimeout(speakGreeting, 1800));
 document.getElementById('voiceReplayBtn')?.addEventListener('click', speakGreeting);
 document.getElementById('voiceBtn')?.addEventListener('click', speakGreeting);
+
+/* ════════════════════════════════════════
+   AVATAR TILT  (mouse-move parallax)
+   ════════════════════════════════════════ */
+const avatarCard = document.getElementById('avatarCard');
+if (avatarCard && !isMobile && window.matchMedia('(pointer:fine)').matches) {
+  avatarCard.addEventListener('mousemove', e => {
+    if (reduceMotion) return;
+    const r  = avatarCard.getBoundingClientRect();
+    const dx = (e.clientX - (r.left + r.width  / 2)) / (r.width  / 2);
+    const dy = (e.clientY - (r.top  + r.height / 2)) / (r.height / 2);
+    avatarCard.style.transform        = `perspective(900px) rotateX(${-dy * 8}deg) rotateY(${dx * 8}deg)`;
+    avatarCard.style.animationPlayState = 'paused'; // pause breathe during tilt
+  });
+  avatarCard.addEventListener('mouseleave', () => {
+    avatarCard.style.transform          = '';
+    avatarCard.style.animationPlayState = '';
+  });
+}
 
 /* ════════════════════════════════════════
    CUSTOM CURSOR
