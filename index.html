@@ -92,17 +92,42 @@
           </div>
         </div>
         <div class="hero-visual">
-          <canvas id="character-canvas"></canvas>
+          <!-- ── Avatar ──────────────────────────────────────────────
+               To swap your photo: replace images/hero-avatar.png
+               with your own image file (same filename or update src).
+          ──────────────────────────────────────────────────────── -->
+          <div class="avatar-wrapper">
+            <div class="avatar-glow-ring"></div>
+            <div class="avatar-glow-ring avatar-glow-ring-2"></div>
+            <img
+              src="images/hero-avatar.png"
+              alt="Sejal Shankar Desai — Automation Engineer"
+              class="hero-avatar-img"
+            />
+          </div>
+
+          <!-- ── Skill tags ── -->
+          <div class="hero-skill-tags">
+            <span class="skill-tag">🤖 Automation Engineering</span>
+            <span class="skill-tag">🧪 Lab Automation</span>
+            <span class="skill-tag">&lt;/&gt; App Building</span>
+          </div>
+
+          <!-- ── Play intro button ──────────────────────────────────
+               Voice note uses browser speech synthesis (no file needed).
+               To use a real audio file: swap the speakGreeting() call
+               in app.js for an Audio('audio/sejal-intro.mp3').play().
+          ──────────────────────────────────────────────────────── -->
           <button class="voice-replay-btn" id="voiceReplayBtn">
-            <span class="voice-icon">🔊</span>
-            <span class="voice-label">Hear my intro</span>
+            <span class="voice-play-icon">▶</span>
+            <span class="voice-label">Play Intro</span>
             <span class="voice-waves">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
+              <span></span><span></span><span></span><span></span><span></span>
             </span>
           </button>
+          <p class="voice-fallback" id="voiceFallback">
+            🎧 Click play to hear my voice
+          </p>
         </div>
       </section>
     </div>
