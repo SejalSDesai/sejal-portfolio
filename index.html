@@ -16,7 +16,7 @@
   <!-- Background Canvas -->
   <canvas id="bg-canvas"></canvas>
 
-  <!-- Navigation (controls live inside nav to prevent overlap with links) -->
+  <!-- Navigation -->
   <nav class="nav" id="nav">
     <div class="nav-logo">SSD</div>
     <ul class="nav-links">
@@ -28,16 +28,18 @@
       <li><button class="nav-link" data-page="page-resume">Resume</button></li>
       <li><button class="nav-link" data-page="page-contact">Contact</button></li>
     </ul>
-    <div class="top-controls">
-      <button class="ctrl-btn" id="voiceBtn" title="Hear intro">🔊</button>
-      <button class="ctrl-btn" id="reduceMotionBtn" title="Toggle animations">⚙</button>
-      <button class="ctrl-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <span class="toggle-icon sun">☀️</span>
-        <span class="toggle-icon moon">🌙</span>
-      </button>
-    </div>
     <button class="nav-menu" id="navMenu">☰</button>
   </nav>
+
+  <!-- Bottom controls bar (desktop only) -->
+  <div class="bottom-controls" id="bottomControls">
+    <button class="ctrl-btn" id="voiceBtn" title="Hear intro">🔊</button>
+    <button class="ctrl-btn" id="reduceMotionBtn" title="Toggle animations">⚙</button>
+    <button class="ctrl-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="toggle-icon sun">☀️</span>
+      <span class="toggle-icon moon">🌙</span>
+    </button>
+  </div>
 
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-link" data-page="page-home">Home</button>

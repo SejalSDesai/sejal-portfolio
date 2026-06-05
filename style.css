@@ -122,12 +122,18 @@ button { font-family: inherit; }
 }
 
 /* ════════════════════════════════════════
-   TOP CONTROLS  (now inside <nav>, no fixed positioning)
+   BOTTOM CONTROLS  (fixed bottom-left, desktop only)
    ════════════════════════════════════════ */
-.top-controls {
+.bottom-controls {
+  position: fixed;
+  bottom: 24px; left: 24px;
+  z-index: 1000;
   display: flex;
   gap: 8px;
   align-items: center;
+}
+@media (max-width: 1000px) {
+  .bottom-controls { display: none; }
 }
 
 .ctrl-btn {
@@ -1218,7 +1224,6 @@ main.page-container {
 @media (max-width:640px) {
   .page-section       { padding:3.5rem 1rem; }
   .projects-grid      { grid-template-columns:1fr; }
-  .top-controls       { gap:5px; }
   .ctrl-btn           { width:36px; height:36px; font-size:0.88rem; }
   .avatar-card        { width:260px; border-radius:20px; }
   .avatar-photo       { border-radius:20px; }
